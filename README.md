@@ -1,4 +1,4 @@
-# Literature Review of SSA 2026 Workshop
+# Literature Review for SSA 2026 Workshop
 
 ## Methodology
 
