@@ -1,0 +1,26 @@
+You are instructor designing a 4 hour workshop for preparing cloud-based seismic and geodetic data for reseach conducted by early career professionals. Write a lesson plan using the articles provided below.
+
+
+Format the lesson plan to work with in Jupyter Lab. Create a Python based exercise for each part.
+
+What’s inside
+
+Part 1 – Intro & Context: Quick tour of seismic (MiniSEED) and GNSS time series; visualizations.
+
+Part 2 – Data Access & Preparation: Reusable functions for detrending, bandpass filtering, outlier removal (Hampel), resampling; saves cleaned outputs (Parquet).
+
+Part 3 – Analysis & ML:
+
+3A: Seismic event detection (Random Forest) from windowed features (RMS, peak, ZCR, spectral centroid).
+
+3B (optional): GNSS “PWV surrogate” regression demo.
+
+Part 4 – Reproducibility: Run config JSON, artifact packaging, and optional requirements/Makefile stubs.
+
+The notebook includes:
+
+Cloud-friendly hooks (e.g., fsspec for s3:// / gs:// paths) with synthetic fallbacks.
+
+Clear TODOs and deliverables for participants.
+
+Minimal, dependency-light examples (ObsPy/scikit-learn used if available, otherwise graceful messages).
