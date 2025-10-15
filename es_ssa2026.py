@@ -47,14 +47,14 @@ llm = Ollama(model="gemma3:4b", request_timeout=600.0)
 Settings.llm = llm
 Settings.embed_model = ollama_embedding
 
-# load_docs()
+load_docs()
 
 
 # resp =llm_query("""How are researchers using the cloud base data to study changes 
 #                 to the earth's surface, the ionosphere, and air moisture content 
 #                 using GNSS. Reference multiple studies in long form essay on this topic. 
 #                 Focus on the challenges involved with respect to early career professionals. 
-#                 Provide references from articles""")
+#                 Use only the information provided in the database.""")
 
 # resp =llm_query("""List the research techniques using the cloud base data to study changes 
 #                 to the earth's surface, the ionosphere, and air moisture content 
@@ -74,9 +74,9 @@ Settings.embed_model = ollama_embedding
 #                 essay on this topic. Focus on the challenges involved with respect to early career 
 #                 professionals. Provide references from articles""")
 
-resp =llm_query("""List the all the types of studies using cloud based seismic and geodetic data. 
-                Focus on machine learning and artificial intelligence methodologies. Write a 
-                long form essay on this topic. Focus on the challenges involved with respect to 
-                early career professionals. Provide references from articles""")
+# resp =llm_query("""List the all the types of studies using cloud based seismic and geodetic data. 
+#                 Focus on machine learning and artificial intelligence methodologies. Write a 
+#                 long form essay on this topic. Focus on the challenges involved with respect to 
+#                 early career professionals. Provide references from articles""")
 
-write_markdown_file("seismic_3.md", resp)
+# write_markdown_file("seismic_4.md", resp)
