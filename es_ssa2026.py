@@ -41,13 +41,13 @@ def write_markdown_file(filename, content):
 
 
 # set up llm
-llm = Ollama(model="gemma3:4b", request_timeout=600.0)
+llm = Ollama(model="gpt-oss", request_timeout=12000.0)
 
 # set up as global models
 Settings.llm = llm
 Settings.embed_model = ollama_embedding
 
-load_docs()
+# load_docs()
 
 
 # resp =llm_query("""How are researchers using the cloud base data to study changes 
@@ -60,7 +60,8 @@ load_docs()
 #                 to the earth's surface, the ionosphere, and air moisture content 
 #                 using GNSS. Focus on machine learning and artificial intelligence methodologies.
 #                 Write this in a long form essay on this topic. Focus on the challenges involved 
-#                 with respect to early career professionals. Provide references from articles""")
+#                 with respect to early career professionals.  Use only the information provided in 
+#                 the database.""")
 
 # resp =llm_query("""List the research techniques using the cloud base data to study seismic 
 #                 events, subsurface geology, and ionospheric changes
@@ -79,4 +80,19 @@ load_docs()
 #                 long form essay on this topic. Focus on the challenges involved with respect to 
 #                 early career professionals. Provide references from articles""")
 
-# write_markdown_file("seismic_4.md", resp)
+
+# resp = llm_query("""You are performing a literature review of GNSS, geodesy, GPS, or precise
+#                  positioning from journal articles. Using only the database, create an exhaustive 
+#                  list the of data collected and the analysis performed. 
+#                  Write a detailed summary of the workflow for each analysis performed in essay form. 
+#                  Only focus on geodesy use cases. Do not provide a concise synthesis, write response as 
+#                  an essay.""")
+
+resp = llm_query("""You are performing a literature review of tectonic, earthquakes, seismic data,
+                 or seismology from journal articles. Using only the database, create an 
+                 exhaustive list of the data collected and the analyses performed. 
+                 Write a detailed summary of the workflow for each analysis performed in essay form. 
+                 Only focus on seismology use cases. Do not provide a concise synthesis, write 
+                 response as an essay. Do not include any reference ids from the database.""")
+
+write_markdown_file("workflow_seismology_gpt-oss_2.md", resp)

@@ -18,7 +18,7 @@ Responses were saved in markdown. Few-shot prompts with ChatGPT were used to cre
 
 ## To Do
 
-- Streaming with memory UI (probably silverlight)
+- Streaming with memory UI (probably streamlit)
 - Setup instructions
 - Agent to update encoding database when article is added to corpus
 - Search agent to acquire new articles
