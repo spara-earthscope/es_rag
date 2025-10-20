@@ -81,18 +81,35 @@ Settings.embed_model = ollama_embedding
 #                 early career professionals. Provide references from articles""")
 
 
-# resp = llm_query("""You are performing a literature review of GNSS, geodesy, GPS, or precise
-#                  positioning from journal articles. Using only the database, create an exhaustive 
-#                  list the of data collected and the analysis performed. 
-#                  Write a detailed summary of the workflow for each analysis performed in essay form. 
-#                  Only focus on geodesy use cases. Do not provide a concise synthesis, write response as 
-#                  an essay.""")
-
-resp = llm_query("""You are performing a literature review of tectonic, earthquakes, seismic data,
-                 or seismology from journal articles. Using only the database, create an 
-                 exhaustive list of the data collected and the analyses performed. 
+resp = llm_query("""You are performing a literature review of GNSS, geodesy, GPS, or precise
+                 positioning from journal articles. Using only the database,  create an 
+                 list of use cases. Include descriptions of the data collected and the analyses performed. 
                  Write a detailed summary of the workflow for each analysis performed in essay form. 
-                 Only focus on seismology use cases. Do not provide a concise synthesis, write 
-                 response as an essay. Do not include any reference ids from the database.""")
+                 Only focus on geodesy use cases. Do not provide a concise synthesis, write 
+                 response as an essay. Do not include any reference ids from the database.
+                 
+                 Format the use cases like the following example:
 
-write_markdown_file("workflow_seismology_gpt-oss_2.md", resp)
+                 ### the use case 
+
+                 | Paper (excerpt) | Data Collected | Analysis Workflow |
+                 |-----------------|----------------|-------------------|
+                 | “GNSS Meteorology: Remote sensing of atmospheric water vapor” (Bevis et al., 1992) | Continuous dual‑frequency GNSS carrier‑phase and pseudorange observations from a global network of precision receivers. | 1. **Pre‑processing** – cycle slip detection, carrier‑phase ambiguities resolved by integer or float solutions; 2. **Tropospheric delay separation** – linear combination of L1/L2 to eliminate ionosphere; 3. **ZTD estimation** – least‑squares adjustment; 4. **Conversion to PWV** – applying atmospheric mapping functions and specific humidity equations; 5. **Spatial interpolation** – Kriging or spline to generate continuous PWV fields; 6. **Validation** – comparison with radiosonde and microwave radiometer measurements. |    """)
+
+# resp = llm_query("""You are performing a literature review of tectonic, earthquakes, seismic data,
+#                  or seismology from journal articles. Using only the database, create an 
+#                  list of use cases. Include descriptions of the data collected and the analyses performed. 
+#                  Write a detailed summary of the workflow for each analysis performed in essay form. 
+#                  Only focus on seismology use cases. Do not provide a concise synthesis, write 
+#                  response as an essay. Do not include any reference ids from the database.
+                 
+#                  Format the use cases like the following example:
+
+#                  ### the use case 
+
+#                  | Paper (excerpt) | Data Collected | Analysis Workflow |
+#                  |-----------------|----------------|-------------------|
+#                  | “GNSS Meteorology: Remote sensing of atmospheric water vapor” (Bevis et al., 1992) | Continuous dual‑frequency GNSS carrier‑phase and pseudorange observations from a global network of precision receivers. | 1. **Pre‑processing** – cycle slip detection, carrier‑phase ambiguities resolved by integer or float solutions; 2. **Tropospheric delay separation** – linear combination of L1/L2 to eliminate ionosphere; 3. **ZTD estimation** – least‑squares adjustment; 4. **Conversion to PWV** – applying atmospheric mapping functions and specific humidity equations; 5. **Spatial interpolation** – Kriging or spline to generate continuous PWV fields; 6. **Validation** – comparison with radiosonde and microwave radiometer measurements. |                  
+#                  """)
+
+write_markdown_file("workflow_geodesy_gpt-oss_3.md", resp)
