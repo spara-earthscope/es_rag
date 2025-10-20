@@ -14,7 +14,7 @@ Responses were saved in markdown. Few-shot prompts with ChatGPT were used to cre
 - `es_ssa2026.py` - script for creating embeddings, loading duckdb, and generate response to prompts.
 - `./docs` contains corpus of articles
 - `/responses` contains summaries generated from zero-shot prompts
-- `./lesson_plan` contains ChatGPT generated lesson plan and exercises.
+- `./summaries` contains summaries for all seismic and geodetic articles.
 
 ## To Do
 
